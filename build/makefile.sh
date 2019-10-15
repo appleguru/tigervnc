@@ -21,10 +21,10 @@ PREFIX=/opt/tigervnc
 CC:=/usr/bin/llvm-gcc
 CXX:=/usr/bin/llvm-g++
 CPP:="/usr/bin/llvm-gcc -E"
-CFLAGS:=-I$(PREFIX)/include -O2 -isysroot /Users/Shared/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -m64
-CXXFLAGS:=-I$(PREFIX)/include -O2 -isysroot /Users/Shared/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -m64
-CPPFLAGS:=-I$(PREFIX)/include -O2 -isysroot /Users/Shared/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -m64
-LDFLAGS:=-L$(PREFIX)/lib -isysroot /Users/Shared/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.14 -m64
+CFLAGS:=-I$(PREFIX)/include -O2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mmacosx-version-min=10.14 -m64
+CXXFLAGS:=-I$(PREFIX)/include -O2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mmacosx-version-min=10.14 -m64
+CPPFLAGS:=-I$(PREFIX)/include -O2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mmacosx-version-min=10.14 -m64
+LDFLAGS:=-L$(PREFIX)/lib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -mmacosx-version-min=10.14 -m64
 PKG_CONFIG_PATH:=$(PREFIX)/lib/pkgconfig:${PKG_CONFIG_PATH}
 PATH:=$(PREFIX)/bin:$(PATH)
 
@@ -155,7 +155,7 @@ fltk:
   		-DCMAKE_INSTALL_PREFIX=$(PREFIX) \
   		-DCMAKE_BUILD_TYPE=Release \
   		-DOPTION_BUILD_EXAMPLES=off \
-  		-DCMAKE_OSX_SYSROOT=/Users/Shared/SDKs/MacOSX10.14.sdk \
+  		-DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk \
   		-DCMAKE_OSX_DEPLOYMENT_TARGET=10.14 \
   		-DOPTION_USE_SYSTEM_LIBPNG=0 \
   		-DOPTION_USE_SYSTEM_LIBJPEG=0 \
@@ -188,7 +188,7 @@ dmg:
   		-DGETTEXT_MSGMERGE_EXECUTABLE=$(PREFIX)/bin/msgmerge \
   		-DGETTEXT_MSGFMT_EXECUTABLE=$(PREFIX)/bin/msgfmt \
   		-DBUILD_STATIC=off \
-  		-DCMAKE_OSX_SYSROOT=/Users/Shared/SDKs/MacOSX10.14.sdk \
+  		-DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk \
   		-DCMAKE_OSX_DEPLOYMENT_TARGET=10.14 \
   		. && \
 	make && \
